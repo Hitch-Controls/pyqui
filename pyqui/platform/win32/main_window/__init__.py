@@ -7,32 +7,33 @@ from ctypes.wintypes import LONG
 
 from pyqui.qt import *
 from pyqui.gui.main_window.core import PQMainWindow
+from pyqui.gui.main_window.frameless import PQFramelessMainWindow
 
 from . import utils
 
 
 class PQWin32MainWindow(PQMainWindow):
+    pass
+
+
+class PQWin32FramelessMainWindow(PQFramelessMainWindow):
     def _init_window(self):
         super()._init_window()
         
-        if self.settings["custom_title_bar"]:
-            self.setWindowFlag(qtc.Qt.FramelessWindowHint)
-            self.setAttribute(qtc.Qt.WA_TranslucentBackground)
-
-            if sys.platform == 'win32':
-                hwnd = int(self.winId())
-                window_style = win32gui.GetWindowLong(hwnd, win32con.GWL_STYLE)
-                win32gui.SetWindowLong(
-                    hwnd,
-                    win32con.GWL_STYLE,
-                    window_style
-                    | win32con.WS_CAPTION
-                    | win32con.WS_THICKFRAME
-                    | win32con.WS_SYSMENU
-                    | win32con.WS_MAXIMIZEBOX
-                    | win32con.WS_MINIMIZEBOX
-                )
-                # win32gui.SetWindowPos(hwnd, win32con.NULL, 0, 0, 0, 0, win32con.SWP_FRAMECHANGED)
+        if sys.platform == 'win32':
+            hwnd = int(self.winId())
+            window_style = win32gui.GetWindowLong(hwnd, win32con.GWL_STYLE)
+            win32gui.SetWindowLong(
+                hwnd,
+                win32con.GWL_STYLE,
+                window_style
+                | win32con.WS_CAPTION
+                | win32con.WS_THICKFRAME
+                | win32con.WS_SYSMENU
+                | win32con.WS_MAXIMIZEBOX
+                | win32con.WS_MINIMIZEBOX
+            )
+            # win32gui.SetWindowPos(hwnd, win32con.NULL, 0, 0, 0, 0, win32con.SWP_FRAMECHANGED)
                 
     def nativeEvent(self, eventType, message):
         _edge_test_width = 8
