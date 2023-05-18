@@ -1,7 +1,7 @@
 from datetime import date
 
 from pyqui.qt import qtw, qtc, qtg
-from pyqui.gui.main_window import PQMainWindow
+from pyqui.ui.mainwindow import PQMainWindow
 from pyqui.conf.settings import get_settings, Settings
 from pyqui.resources import RES_PATH
 

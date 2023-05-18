@@ -22,10 +22,10 @@ from datetime import date
 
 from pyqui.resources.utils import *
 from pyqui.conf import get_settings
-from pyqui.gui.uis.columns.ui_right_column import Ui_RightColumn
+from pyqui.ui.uis.columns.ui_right_column import Ui_RightColumn
 from pyqui.qt import qtw, qtc, qtg
 
-from pyqui.gui.widgets import PQCreditsBar, PyTitleBar, PyLeftMenu, PyLeftColumn, PQWindow
+from pyqui.ui.widgets import PQCreditsBar, PyTitleBar, PyLeftMenu, PyLeftColumn, PQWindow
 
 from .utils import MainWindowUtils
 

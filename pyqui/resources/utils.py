@@ -36,7 +36,3 @@ def svg_image(image_name):
     if not image_name.startswith(':'):
         return (SVG_IMAGE_DIR / image_name).as_posix()
     return image_name
-
-
-def set_image(image_name):
-    return (IMAGES_DIR / image_name).as_posix()

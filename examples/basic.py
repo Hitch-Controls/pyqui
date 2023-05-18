@@ -1,7 +1,7 @@
 import sys
 
 from pyqui import PQApplication
-from pyqui.gui.main_window import PQMainWindow
+from pyqui.ui.mainwindow import PQMainWindow
 
 
 class MyApplication(PQApplication):

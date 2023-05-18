@@ -1,6 +1,6 @@
 from pyqui.qt import *
-from pyqui.gui.main_window.core import PQMainWindow
-from pyqui.gui.main_window.frameless import PQFramelessMainWindow
+from pyqui.ui.mainwindow.core import PQMainWindow
+from pyqui.ui.mainwindow.frameless import PQFramelessMainWindow
 
 
 class PQDarwinMainWindow(PQMainWindow):
